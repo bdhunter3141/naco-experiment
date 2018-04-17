@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
+import './layout-override.css'
 
 const Layout = ({ children, data }) => (
   <div>
