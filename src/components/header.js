@@ -7,7 +7,8 @@ import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } fr
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 20px 30px;
+  margin: 20px 30px 40px 30px;
+  border-bottom: solid 1px #D3D3D3;
   .nav-button {
     text-decoration: none;
     color: #333;
@@ -25,7 +26,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     li {
-      padding: 15px;
+      padding: 20px 15px 0 20px;
       list-style: none;
       font-size: 14px;
       min-width: 100px;
