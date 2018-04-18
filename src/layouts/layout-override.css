@@ -1,3 +1,14 @@
+/* GENERAL */
+
+a:hover {
+  text-decoration: none;
+  color: #54BCEB;
+}
+
+a {
+  color: #0079c1;
+}
+
 /* DASHBOARDS */
 
 .dashboard-wrapper {

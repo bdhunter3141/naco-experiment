@@ -32,6 +32,9 @@ const HeaderWrapper = styled.div`
       min-width: 100px;
     }
   }
+  button {
+    cursor: pointer;
+  }
 `
 
 export default class Header extends Component {
@@ -62,11 +65,8 @@ export default class Header extends Component {
                   DEALS
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem disabled>Action</DropdownItem>
-                  <DropdownItem>Another Action</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Another Action</DropdownItem>
+                  <Link to="/my-deals"><DropdownItem>My Deals</DropdownItem></Link>
+                  <Link to="submit-deal"><DropdownItem>Submit New Deal</DropdownItem></Link>
                 </DropdownMenu>
               </ButtonDropdown>
             </li>
@@ -80,11 +80,8 @@ export default class Header extends Component {
                   EXITS
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem disabled>Action</DropdownItem>
-                  <DropdownItem>Another Action</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Another Action</DropdownItem>
+                  <Link to="/my-exits"><DropdownItem>My Exits</DropdownItem></Link>
+                  <Link to="submit-exit"><DropdownItem>Submit New Exit</DropdownItem></Link>
                 </DropdownMenu>
               </ButtonDropdown>
             </li>
@@ -97,12 +94,10 @@ export default class Header extends Component {
                 <DropdownToggle className="nav-button" color="link" caret>
                   USER
                 </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem disabled>Action</DropdownItem>
-                  <DropdownItem>Another Action</DropdownItem>
+                <DropdownMenu right="true">
+                  <Link to="/profile"><DropdownItem>My Profile</DropdownItem></Link>
                   <DropdownItem divider />
-                  <DropdownItem>Another Action</DropdownItem>
+                  <Link to="#"><DropdownItem>Log Out</DropdownItem></Link>
                 </DropdownMenu>
               </ButtonDropdown>
             </li>
