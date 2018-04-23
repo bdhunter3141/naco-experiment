@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
@@ -36,9 +36,6 @@ const HeaderWrapper = styled.div`
       min-width: 100px;
     }
   }
-  button {
-    cursor: pointer;
-  }
 `
 
 export default class Header extends Component {
@@ -68,6 +65,27 @@ export default class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
+        <div>
+          <FlatButton
+            onClick={this.handleClick}
+            label="USER"
+          />
+          <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+            targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu>
+              <Link to="/profile"><MenuItem primaryText="My Profile" /></Link>
+              <MenuItem
+                onClick={this.handleRequestClose} primaryText="Help &amp; feedback" />
+              <MenuItem primaryText="Settings" />
+              <MenuItem primaryText="Sign out" />
+            </Menu>
+          </Popover>
+        </div>
         <Link to="/"><img alt={this.props.siteTitle} src="https://d3lut3gzcpx87s.cloudfront.net/image_encoded/aHR0cHM6Ly9zaWxrc3RhcnQuczMuYW1hem9uYXdzLmNvbS8yMzUxYjhkZC05NzRiLTE3OGQtODc3Ny0wYmM0ZTQ5Y2M3NTMucG5n/540x100fPNG" /></Link>
         <nav>
           <ul>
@@ -121,6 +139,29 @@ export default class Header extends Component {
                   <Link to="#"><DropdownItem>Log Out</DropdownItem></Link>
                 </DropdownMenu>
               </ButtonDropdown>
+            </li>
+            <li>
+              <div>
+              <FlatButton
+                onClick={this.handleClick}
+                label="USER"
+              />
+              <Popover
+                open={this.state.open}
+                anchorEl={this.state.anchorEl}
+                anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+                targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+                onRequestClose={this.handleRequestClose}
+              >
+                <Menu>
+                  <Link to="/profile"><MenuItem primaryText="My Profile" /></Link>
+                  <MenuItem
+                    onClick={this.handleRequestClose} primaryText="Help &amp; feedback" />
+                  <MenuItem primaryText="Settings" />
+                  <MenuItem primaryText="Sign out" />
+                </Menu>
+              </Popover>
+              </div>
             </li>
           </ul>
         </nav>
