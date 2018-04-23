@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from '../components/header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import './layout-override.css'
 
 const Layout = ({ children, data }) => (
-  <div>
+  <MuiThemeProvider>
+    <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -27,7 +28,8 @@ const Layout = ({ children, data }) => (
     >
       {children()}
     </div>
-  </div>
+    </div>
+  </MuiThemeProvider>
 )
 
 Layout.propTypes = {

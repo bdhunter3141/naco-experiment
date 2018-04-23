@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link'
+import RaisedButton from 'material-ui/RaisedButton';
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 import styled from 'styled-components'
 import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
@@ -41,8 +45,25 @@ export default class Header extends Component {
   state = {
     dealDropdownOpen: false,
     exitDropdownOpen: false,
-    userDropdownOpen: false
+    userDropdownOpen: false,
+    open: false,
   }
+
+  handleClick = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
 
   render() {
     return (
